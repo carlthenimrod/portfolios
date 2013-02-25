@@ -1,0 +1,18 @@
+<p>
+	<%= @portfolio.title %>
+</p>
+
+<p>
+	<%= @portfolio.description %>
+</p>
+
+<p>
+	<%= image_tag @portfolio.img_url.to_s %>
+</p>
+
+<p>
+	<%= image_tag @portfolio.img_url(:thumb).to_s %>
+</p>
+<p>
+	<%= @portfolio.info %>
+</p>

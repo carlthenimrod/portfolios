@@ -1,0 +1,13 @@
+<%= form_for @portfolio, html: {multipart: true} do |f| %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+
+	Image: <%= f.file_field :img %>
+
+	<%= f.submit %>
+	
+<% end %>

@@ -1,1 +1,33 @@
-<%= @portfolios %>
+<h1>Portfolio Manager</h1>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Title</th>
+		<th>Created On</th>
+		<th>Image</th>
+		<th>Actions</th>
+	</tr>
+
+	<% @portfolios.each do |p| %>
+
+		<tr>
+			<td>
+					<%= p.id %>
+			</td>
+			<td>
+				<%= p.title %>
+			</td>
+			<td>
+				<%= p.created_at.strftime("%m/%d/%Y") %>
+			</td>
+			<td>
+				<%= link_to image_tag("photo-icon.png"),  p.img_url.to_s %>
+			</td>
+			<td>
+				<%= link_to image_tag("delete-icon.png"),  p, method: :delete, confirm: "Are you sure?" %>
+			</td>
+		</tr>
+
+	<% end %>
+</table>

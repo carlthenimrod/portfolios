@@ -1,13 +1,18 @@
 <%= form_for @portfolio, html: {multipart: true} do |f| %>
 
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<h1>Create a New Portfolio</h1>
 
-	<%= f.label :description %>
-	<%= f.text_field :description %>
+	<%= f.label :title, 'Title:' %>
+	<%= f.text_field :title, placeholder: 'Add a title for the portfolio...' %>
 
-	Image: <%= f.file_field :img %>
+	<%= f.label :description, 'Description:' %>
+	<%= f.text_area :description, placeholder: 'Add a description for the portfolio...' %>
 
-	<%= f.submit %>
+	<%= f.label :img, 'Upload Image:' %>
+	<%= f.file_field :img %>
+
+	<div class="form-btns">
+		<%= f.submit 'Create' %>
+	</div>
 	
 <% end %>

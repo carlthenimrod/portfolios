@@ -37,6 +37,11 @@ class PortfoliosController < ApplicationController
 
 	def destroy
 
+		@portfolio = Portfolio.find(params[:id])
+		@portfolio.destroy
+
+		redirect_to action: 'index'
+
 	end
 
 end

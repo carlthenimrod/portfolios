@@ -1,33 +1,24 @@
+<%= provide :title, '| Portfolio Manager' %>
+
 <h1>Portfolio Manager</h1>
 
-<table>
-	<tr>
-		<th>ID</th>
-		<th>Title</th>
-		<th>Created On</th>
-		<th>Image</th>
-		<th>Actions</th>
-	</tr>
+<ul class="pm-index-header">
+	<li class="pm-index-title">Item</li>
+	<li class="pm-index-update">Last Updated</li>
+	<li class="pm-index-thumb">Thumb</li>
+</ul><!-- .pm-index-header -->
+
+<div class="pm-index-body">
 
 	<% @portfolios.each do |p| %>
 
-		<tr>
-			<td>
-					<%= p.id %>
-			</td>
-			<td>
-				<%= p.title %>
-			</td>
-			<td>
-				<%= p.created_at.strftime("%m/%d/%Y") %>
-			</td>
-			<td>
-				<%= link_to image_tag("photo-icon.png"),  p.img_url.to_s %>
-			</td>
-			<td>
-				<%= link_to image_tag("delete-icon.png"),  p, method: :delete, confirm: "Are you sure?" %>
-			</td>
-		</tr>
+		<%= link_to edit_portfolio_path(p), alt: p.title, title: p.title do %>
+			<ul>
+				<li class="pm-index-title"><%= p.title %></li>
+				<li class="pm-index-update"><%= p.updated_at.strftime("%m/%d/%Y") %></li>
+				<li class="pm-index-thumb"><%= image_tag p.img_url(:thumb).to_s %></li>
+			</ul>
+		<% end %>
 
 	<% end %>
-</table>
+</div><!-- .pm-index-body -->

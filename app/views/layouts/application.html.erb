@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolios</title>
+  <title>Site Name <%= yield(:title) %></title>
 
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -11,6 +11,7 @@
 <body>
 	<header>
 		<div class="wrapper">
+			<%= link_to 'Portfolios', root_path %> | <%= link_to 'Portfolio Manager', portfolios_path %>
 
 		</div>
 	</header>

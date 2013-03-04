@@ -1,18 +1,7 @@
-<p>
-	<%= @portfolio.title %>
-</p>
+<%= provide :title, '| ' + @portfolio.title %>
 
-<p>
-	<%= @portfolio.description %>
-</p>
+<h1><%= @portfolio.title %></h1>
 
-<p>
-	<%= image_tag @portfolio.img_url.to_s %>
-</p>
+<p><%= @portfolio.description %></p>
 
-<p>
-	<%= image_tag @portfolio.img_url(:thumb).to_s %>
-</p>
-<p>
-	<%= @portfolio.info %>
-</p>
+<%= link_to image_tag(@portfolio.img_url(:thumb).to_s), @portfolio.img_url %>

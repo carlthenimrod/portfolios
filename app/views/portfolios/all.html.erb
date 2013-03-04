@@ -1,0 +1,11 @@
+<h1>Portfolios:</h1>
+
+<ul class="pm-portfolios">
+	<% @portfolios.each do |p| %>
+		<li>
+			<%= link_to p, alt: p.title, title: p.title do %>
+				<%= image_tag p.img_url(:thumb).to_s %><%= p.title %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>

@@ -2,23 +2,41 @@
 
 <h1>Portfolio Manager</h1>
 
-<ul class="pm-index-header">
-	<li class="pm-index-title">Item</li>
-	<li class="pm-index-update">Last Updated</li>
-	<li class="pm-index-thumb">Thumb</li>
-</ul><!-- .pm-index-header -->
+<div class="pm-index">
+	<div class="pm-index-actions">
+		<%= link_to 'Save', '#', alt: 'Save', title: 'Save' %>
 
-<div class="pm-index-body">
+		<%= link_to 'Add New', new_portfolio_path, alt: 'Add New', title: 'Add New' %>
+	</div><!-- .pm-index-actions -->
 
-	<% @portfolios.each do |p| %>
+	<ul class="pm-index-header">
+		<li class="pm-index-header-order">Order #</li><!-- .pm-index-header-order -->
+		<li class="pm-index-header-item">Item &nbsp;&nbsp;<i>**Click Item to Edit Info **</i></li><!-- .pm-index-header-item -->
+		<li class="pm-index-header-delete">Delete</li><!-- .pm-index-header-delete -->
+	</ul><!-- .pm-index-header -->
 
-		<%= link_to edit_portfolio_path(p), alt: p.title, title: p.title do %>
-			<ul>
-				<li class="pm-index-title"><%= p.title %></li>
-				<li class="pm-index-update"><%= p.updated_at.strftime("%m/%d/%Y") %></li>
-				<li class="pm-index-thumb"><%= image_tag p.img_url(:thumb).to_s %></li>
-			</ul>
+	<div class="pm-index-body">
+
+		<% @portfolios.each do |p| %>
+
+			<div class="pm-index-item">
+				<div class="pm-index-order">
+					<input type="textfield" value="0" maxlength="1" />
+				</div><!-- .pm-index-order -->
+
+				<%= link_to edit_portfolio_path(p), alt: p.title, title: p.title, class: 'pm-index-item-body' do %>
+					<ul>
+						<li class="pm-index-title"><%= p.title %></li><!-- .pm-index-title -->
+						<li class="pm-index-update"><%= p.updated_at.strftime("%m/%d/%Y") %></li><!-- .pm-index-update -->
+						<li class="pm-index-thumb"><%= image_tag p.img_url(:thumb).to_s %></li><!-- .pm-index-thumb -->
+					</ul>
+				<% end %><!-- .pm-index-item-body -->
+
+				<div class="pm-index-delete">
+					<%= link_to image_tag('delete-icon.png'), p, alt: 'Delete', title: 'Delete', method: :delete, confirm: 'Are you sure?' %>
+				</div><!-- .pm-index-delete -->
+			</div><!-- .pm-index-item -->
+
 		<% end %>
-
-	<% end %>
-</div><!-- .pm-index-body -->
+	</div><!-- .pm-index-body -->
+</div><!-- .pm-index -->

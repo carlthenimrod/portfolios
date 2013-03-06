@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224223653) do
+ActiveRecord::Schema.define(:version => 20130306185249) do
 
   create_table "portfolios", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description", :limit => 255
     t.string   "img"
     t.string   "info"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
 end

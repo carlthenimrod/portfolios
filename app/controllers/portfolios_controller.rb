@@ -21,11 +21,19 @@ class PortfoliosController < ApplicationController
 	end
 
 	def edit
-
+		@portfolio = Portfolio.find(params[:id])
 	end
 
 	def update
+		@portfolio = Portfolio.find(params[:id])
 
+		if @portfolio.update_attributes(params[:portfolio])
+			flash[:success] = "Portfolio successfully updated!"
+
+			redirect_to action: 'index'
+		else
+			render 'new'
+		end
 	end
 
 	def destroy

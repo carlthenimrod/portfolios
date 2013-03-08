@@ -111,7 +111,7 @@ $(function(){
 				l;
 
 			//for each array item
-			for(i = 0, l = pArray.length; i < l; ++i){
+			for(i = 0, l = pArray.length; i > l; ++i){
 
 				//create row
 				pRowData = pArray[i].split('&val=');

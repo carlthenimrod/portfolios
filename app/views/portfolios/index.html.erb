@@ -2,12 +2,12 @@
 
 <h1>Portfolio Manager</h1>
 
-<div class="pm-index">
-	<div class="pm-index-actions">
-		<%= link_to 'Save', '#', alt: 'Save', title: 'Save' %>
+<div class="pm-ctn">
+	<div class="pm-action-bar">
+		<%= link_to 'Save', '#', alt: 'Save', title: 'Save', class: 'pm-btn' %>
 
-		<%= link_to 'Add New', new_portfolio_path, alt: 'Add New', title: 'Add New' %>
-	</div><!-- .pm-index-actions -->
+		<%= link_to 'Add New', new_portfolio_path, alt: 'Add New', title: 'Add New', class: 'pm-btn' %>
+	</div><!-- .pm-action-bar -->
 
 	<ul class="pm-index-header">
 		<li class="pm-index-header-order">Order #</li><!-- .pm-index-header-order -->
@@ -39,4 +39,4 @@
 
 		<% end %>
 	</div><!-- .pm-index-body -->
-</div><!-- .pm-index -->
+</div><!-- .pm-ctn -->

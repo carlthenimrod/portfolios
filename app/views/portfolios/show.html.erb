@@ -5,3 +5,22 @@
 <p><%= @portfolio.description %></p>
 
 <%= link_to image_tag(@portfolio.img_url(:thumb).to_s), @portfolio.img_url %>
+
+<% unless @portfolio.info.nil? %>
+	<table>
+		<tr>
+			<th>KEY</th>
+			<th>VALUE</th>
+		</tr>
+
+		<% row = @portfolio.info.split '*&*' %>
+
+		<% row.each do |r| %>
+			<tr>
+				<% key, val = r.split '&val=' %>
+				<td><%= key %></td>
+				<td><%= val %></td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>

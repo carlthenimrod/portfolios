@@ -1,20 +1,61 @@
 <%= provide :title, '| New Portfolio' %>
 
-<%= form_for @portfolio, html: {multipart: true} do |f| %>
+<h1>Update Portfolio</h1>
 
-	<h1>Update Portfolio</h1>
+<div class="pm-ctn">
+	<%= form_for @portfolio, html: {multipart: true} do |f| %>
 
-	<%= f.label :title, 'Title:' %>
-	<%= f.text_field :title, placeholder: 'Add a title for the portfolio...' %>
+		<div class="pm-action-bar">
+			<%= f.submit 'Update', class: 'pm-btn' %>
+		</div><!-- .pm-action-bar -->
 
-	<%= f.label :description, 'Description:' %>
-	<%= f.text_area :description, placeholder: 'Add a description for the portfolio...' %>
 
-	<%= f.label :img, 'Upload Image:' %>
-	<%= f.file_field :img %>
+		<div class="pm-form-ctn">
+			<%= f.label :title, 'Title:' %>
+			<%= f.text_field :title, placeholder: 'Add a title for the portfolio...' %>
 
-	<div class="form-btns">
-		<%= f.submit 'Update' %>
-	</div>
-	
-<% end %>
+			<%= f.label :description, 'Description:' %>
+			<%= f.text_area :description, placeholder: 'Add a description for the portfolio...' %>
+		</div><!-- .pm-form-ctn -->
+
+		<br />
+
+		<div class="pm-form-ctn">
+			<div class="pm-form-info-add">
+				<%= link_to '#', alt: 'Add', title: 'Add' do %>
+					Add<%= image_tag 'plus-icon.png' %>
+				<% end %>
+			</div><!-- .pm-form-info-add -->
+
+			<div class="pm-form-info-header">
+				Info Table: 
+			</div><!-- .pm-form-info-header -->
+
+			<p>
+				Enter key/value pairs to be entered into the info table of the portfolio.
+			</p>
+
+			<div class="pm-form-info"></div><!-- .pm-form-info -->
+		</div><!-- .pm-form-ctn -->
+
+		<br />
+
+		<div class="pm-form-ctn">
+			<%= f.label :img, 'Upload Image:' %>
+
+			<div class="pm-upload">
+				<div class="pm-upload-img">
+					<p>Upload a new file to replace the existing image.</p>
+
+					<%= f.file_field :img %>
+				</div><!-- .pm-upload-img -->
+
+				<div class="pm-current-img">
+					<%= link_to image_tag(@portfolio.img_url.to_s), @portfolio.img_url.to_s %>
+				</div><!-- .pm-current-img -->
+			</div><!-- .pm-upload -->
+		</div><!-- .pm-form-ctn -->
+
+		<%= f.hidden_field :info %>
+	<% end %>
+</div><!-- .pm-ctn -->

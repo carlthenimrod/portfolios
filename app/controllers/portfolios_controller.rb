@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
 
-	before_filter :authenticate_user!
+	before_filter :authenticate_user!, except: ['all']
 
 	def index
 		@portfolios = Portfolio.all

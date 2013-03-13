@@ -1,4 +1,7 @@
 Portfolios::Application.routes.draw do
+
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -7,7 +10,7 @@ Portfolios::Application.routes.draw do
   root to: 'portfolios#all'
 
   match '/portfolios' => 'portfolios#index'
-
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

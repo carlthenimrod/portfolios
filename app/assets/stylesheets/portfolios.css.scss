@@ -60,6 +60,7 @@
 	-webkit-box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.2);	
 	padding: 10px 5px 40px 5px;
+	position: relative;
 }
 
 
@@ -78,6 +79,7 @@
 	border: 2px solid #DDD;
 	border-radius: 10px;
 	color: #333;
+	clear: both;
 	padding: 20px 50px;
 	margin: 0 auto;
 	width: 96%;
@@ -390,4 +392,115 @@ ul.pm-portfolios{
 			color: #666;
 		}
 	}
+}
+
+/*** Login Form ***/
+.pm-sign-in{
+	background: rgb(255,255,255); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ3JSIgc3RvcC1jb2xvcj0iI2Y2ZjZmNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+	background-color: #F0F0F0;
+	border: 1px solid #FFF;
+	border-radius: 3px;
+	-webkit-box-shadow:  0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow:  0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+	color: #000;
+	font-size: 14px;
+	margin: 100px auto 200px auto;
+	padding: 30px 40px 30px 40px;
+	text-decoration: none;
+	width: 450px;
+
+	p{
+		font-weight: bold;
+		margin: 0 0 30px 0;
+		text-align: center;
+	}
+	.pm-text-field{
+		margin: 0 0 15px 0;
+
+		label{
+			display: inline-block;
+			padding: 0 10px 0 0;
+			line-height: 25px;
+			text-align: right;
+			width: 20%;
+		}
+		input{
+			display: inline-block;
+			height: 25px;
+			line-height: 25px;
+			padding: 0 10px;
+			width: 75%;
+		}
+	}
+	.pm-remember-me{
+		margin: 40px 0 0 0;
+		padding: 0 20px 0 0;
+		position: relative;
+		text-align: right;
+
+		input{
+			margin: 0 10px 0 0;
+			position: relative;
+			top: 1px;
+		}
+	}
+	.pm-sign-in-button{
+		padding: 30px 15px 0 0;
+		text-align: right;
+	}
+}
+
+/*** Flash Messages ***/
+.pm-error{
+
+	background: #FEE url(error-icon.png) 20px center no-repeat;
+	border: 1px solid #A00;
+	color: #D00;
+	float: left;
+	margin: 10px 20px 20px 20px;
+	padding: 10px 50px 10px 75px;
+	position: absolute;
+	top: 10px;
+	left: 255px;
+
+	.pm-error-title{
+	
+		font-size: 15px;
+		font-style: Verdana;
+		font-weight: bold;
+		margin: 0 0 10px 0;
+	}
+	ul{
+		font-size: 12px;
+		line-height: 18px;
+		list-style-position: inside;
+		list-style-type: square;
+		margin: 0;
+		padding: 0;
+	}
+}
+.pm-error-sign-in{
+	float: none;
+	margin: 10px auto 20px auto;
+	width: 450px;
+}
+.pm-success{
+
+	background: #EFE url(success-icon.png) 20px center no-repeat;
+	border: 1px solid #0A0;
+	color: #0A0;
+	float: left;
+	font-size: 15px;
+	font-style: Verdana;
+	font-weight: bold;
+	margin: 10px 20px 20px 20px;
+	padding: 10px 50px 10px 75px;
 }

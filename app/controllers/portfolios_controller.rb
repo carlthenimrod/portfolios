@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
 
+	before_filter :authenticate_user!
+
 	def index
 		@portfolios = Portfolio.all
 	end
@@ -16,6 +18,8 @@ class PortfoliosController < ApplicationController
 
 			redirect_to action: 'index'
 		else
+			flash[:error] = @portfolio.errors.full_messages
+			
 			render 'new'
 		end
 	end
@@ -32,13 +36,18 @@ class PortfoliosController < ApplicationController
 
 			redirect_to action: 'index'
 		else
-			render 'new'
+			flash[:error] = @portfolio.errors.full_messages
+
+			render 'edit'
 		end
 	end
 
 	def destroy
 		@portfolio = Portfolio.find(params[:id])
+
 		@portfolio.destroy
+		
+		flash[:success] = "Portfolio successfully deleted!"
 
 		redirect_to action: 'index'
 	end

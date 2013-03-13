@@ -5,6 +5,18 @@
 <div class="pm-ctn">
 	<%= form_for @portfolio, html: {multipart: true} do |f| %>
 
+		<% if flash[:error] %>
+			<div class="pm-error">
+				<div class="pm-error-title">Error! The following problems occured:</div><!-- .pm-error-title -->
+
+				<ul>
+					<% flash[:error].each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div><!-- .pm-error -->
+		<% end %>
+
 		<div class="pm-action-bar">
 			<%= f.submit 'Create', class: 'pm-btn' %>
 		</div><!-- .pm-action-bar -->

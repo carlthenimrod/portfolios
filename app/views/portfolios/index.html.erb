@@ -3,6 +3,12 @@
 <h1>Portfolio Manager</h1>
 
 <div class="pm-ctn">
+	<% if flash[:success] %>
+		<div class="pm-success">
+			<%= flash[:success] %>
+		</div><!-- .pm-success -->
+	<% end %>
+
 	<div class="pm-action-bar">
 		<%= link_to 'Save', '#', alt: 'Save', title: 'Save', class: 'pm-btn' %>
 

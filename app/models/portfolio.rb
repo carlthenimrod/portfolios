@@ -8,4 +8,6 @@ class Portfolio < ActiveRecord::Base
   validates :description, presence: true, length: { in: 10..10000 }
 
   mount_uploader :img, ImgUploader
+
+  validates :img, presence: true
 end

@@ -465,9 +465,6 @@ ul.pm-portfolios{
 	float: left;
 	margin: 10px 20px 20px 20px;
 	padding: 10px 50px 10px 75px;
-	position: absolute;
-	top: 10px;
-	left: 255px;
 
 	.pm-error-title{
 	
@@ -488,6 +485,9 @@ ul.pm-portfolios{
 .pm-error-sign-in{
 	float: none;
 	margin: 10px auto 20px auto;
+	position: absolute;
+	top: 10px;
+	left: 255px;
 	width: 450px;
 }
 .pm-success{

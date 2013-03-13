@@ -1,4 +1,6 @@
 class Portfolio < ActiveRecord::Base
+  default_scope order(:id)
+
   attr_accessible :description, :img, :info, :title, :updated_at
 
   validates :title, presence: true, length: { in: 10..1000 }

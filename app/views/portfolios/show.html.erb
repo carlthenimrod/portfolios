@@ -1,6 +1,6 @@
 <%= provide :title, '| ' + @portfolio.title %>
 
-<h1><%= @portfolio.title %></h1>
+<%= render 'header_info', :post => @portfolio.title %>
 
 <p><%= @portfolio.description %></p>
 

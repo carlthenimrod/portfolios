@@ -1,6 +1,6 @@
 <%= provide :title, '| New Portfolio' %>
 
-<h1>Create a New Portfolio</h1>
+<%= render 'header_info', post: 'Create a New Portfolio' %>
 
 <div class="pm-ctn">
 	<%= form_for @portfolio, html: {multipart: true} do |f| %>

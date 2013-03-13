@@ -1,0 +1,12 @@
+<div class="pm-user-info">
+	<% if user_signed_in? %>
+	  Logged in: <strong><%= current_user.email %></strong>
+	  (<%= link_to "Logout", destroy_user_session_path, method: :delete %>) &nbsp;&nbsp;|&nbsp;&nbsp;
+	  <%= link_to 'Portfolios', root_path %> &nbsp;&nbsp;|&nbsp;&nbsp;
+	<%= link_to 'Portfolio Manager', portfolios_path %>
+	<% else %>
+	  <%= link_to "Login", new_user_session_path %>
+	<% end %>
+</div><!-- .pm-user-info -->
+
+<h1><%= post %></h1>

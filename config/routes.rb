@@ -5,7 +5,11 @@ Portfolios::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  resources :portfolios
+  resources :portfolios do
+    collection do
+      put :update_multiple
+    end
+  end
 
   root to: 'portfolios#all'
 
